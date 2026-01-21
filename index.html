@@ -1,353 +1,353 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bismarck – Lernwebseite</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bismarck – Lernwebseite</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #a67c52;
-            --bg-color: #f0f2f5;
-            --card-bg: #ffffff;
-            --text-color: #333;
-            --light-text: #666;
-            --success-color: #27ae60;
-            --error-color: #c0392b;
-        }
+<style>
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #a67c52;
+    --bg-color: #f0f2f5;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --text-color: #333;
+    --light-text: #666;
+    --success-color: #27ae60;
+    --error-color: #c0392b;
+}
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        /* Seitenhintergrund mit Bild */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
 
-        .page-bg {
-            min-height: 100vh;
-            background-image: 
-                linear-gradient(to right, rgba(240,242,245,0.95), rgba(240,242,245,0.95)),
-                url("bismarck.jpg"),
-                url("bismarck.jpg");
-            background-position: left top, left center, right center;
-            background-repeat: no-repeat, no-repeat, no-repeat;
-            background-size: 35%, 35%, 35%;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-        }
+/* Seitenhintergrund mit Bild und Overlay */
+.page-bg {
+    min-height: 100vh;
+    background: linear-gradient(rgba(240,242,245,0.9), rgba(240,242,245,0.9)), 
+                url("bismarck.jpg") center center / cover no-repeat;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
 
-        .content-wrapper {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
+/* Wrapper für den Content */
+.content-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            max-width: 800px;
-        }
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 800px;
+}
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5em;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-        .divider {
-            height: 4px;
-            width: 60px;
-            background-color: var(--accent-color);
-            margin: 0 auto;
-        }
+.divider {
+    height: 4px;
+    width: 60px;
+    background-color: var(--accent-color);
+    margin: 0 auto;
+}
 
-        .info-tafel {
-            max-width: 850px;
-            background-color: var(--card-bg);
-            padding: 50px;
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-top: 8px solid var(--primary-color);
-        }
+/* Info-Tafel */
+.info-tafel {
+    max-width: 850px;
+    background-color: var(--card-bg);
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    border-top: 8px solid var(--primary-color);
+}
 
-        section {
-            margin-bottom: 35px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
+section {
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
 
-        section:last-of-type {
-            border-bottom: none;
-        }
+section:last-of-type {
+    border-bottom: none;
+}
 
-        section h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--accent-color);
-            font-size: 1.5em;
-            margin-top: 0;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-        }
+section h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--accent-color);
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
 
-        section h2::before {
-            content: "";
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            background-color: var(--accent-color);
-            margin-right: 15px;
-            border-radius: 2px;
-        }
+section h2::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    margin-right: 15px;
+    border-radius: 2px;
+}
 
-        section p {
-            line-height: 1.8;
-            font-size: 1.1em;
-            margin: 0;
-            color: var(--text-color);
-            text-align: justify;
-        }
+section p {
+    line-height: 1.8;
+    font-size: 1.1em;
+    margin: 0;
+    color: var(--text-color);
+    text-align: justify;
+}
 
-        /* QUIZ */
+/* QUIZ */
+.quiz-container {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px dashed var(--accent-color);
+}
 
-        .quiz-container {
-            background-color: #f9f9f9;
-            padding: 30px;
-            border-radius: 8px;
-            margin-top: 20px;
-            border: 1px dashed var(--accent-color);
-        }
+.progress-bar {
+    height: 8px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
 
-        .progress-bar {
-            height: 8px;
-            background-color: #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 15px;
-        }
+.progress {
+    height: 100%;
+    width: 0%;
+    background-color: var(--accent-color);
+    transition: width 0.3s;
+}
 
-        .progress {
-            height: 100%;
-            width: 0%;
-            background-color: var(--accent-color);
-            transition: width 0.3s;
-        }
+.quiz-question {
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: block;
+    font-size: 1.1em;
+}
 
-        .quiz-question {
-            font-weight: bold;
-            margin-bottom: 15px;
-            display: block;
-            font-size: 1.1em;
-        }
+.quiz-option {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
 
-        .quiz-option {
-            display: block;
-            margin-bottom: 10px;
-            padding: 10px;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
+.quiz-option:hover {
+    border-color: var(--accent-color);
+}
 
-        .quiz-option:hover {
-            border-color: var(--accent-color);
-        }
+.feedback {
+    margin-top: 10px;
+    font-weight: bold;
+}
 
-        .feedback {
-            margin-top: 10px;
-            font-weight: bold;
-        }
+.score {
+    margin-top: 15px;
+    font-weight: bold;
+}
 
-        .score {
-            margin-top: 15px;
-            font-weight: bold;
-        }
+.restart-btn {
+    margin-top: 15px;
+    padding: 10px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
-        .restart-btn {
-            margin-top: 15px;
-            padding: 10px 16px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+.restart-btn:hover {
+    opacity: 0.9;
+}
 
-        .restart-btn:hover {
-            opacity: 0.9;
-        }
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9em;
+    color: var(--light-text);
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    width: 100%;
+    max-width: 450px;
+    line-height: 1.6;
+}
 
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            font-size: 0.9em;
-            color: var(--light-text);
-            border-top: 1px solid #ccc;
-            padding-top: 20px;
-            width: 100%;
-            max-width: 450px;
-            line-height: 1.6;
-        }
+/* Responsives Design */
+@media (max-width: 900px) {
+    .page-bg {
+        padding: 30px 15px;
+    }
+}
 
-        @media (max-width: 900px) {
-            .page-bg {
-                background-image: linear-gradient(to right, rgba(240,242,245,0.97), rgba(240,242,245,0.97));
-            }
-        }
-
-        @media (max-width: 600px) {
-            .info-tafel { padding: 25px; }
-            h1 { font-size: 1.8em; }
-        }
-    </style>
+@media (max-width: 600px) {
+    .info-tafel { padding: 25px; }
+    h1 { font-size: 1.8em; }
+}
+</style>
 </head>
 
 <body>
-
 <div class="page-bg">
-    <div>
+    <div class="content-wrapper">
 
-        <header>
-            <h1>Otto von Bismarck</h1>
-            <div class="divider"></div>
-        </header>
+        <div>
+            <header>
+                <h1>Otto von Bismarck</h1>
+                <div class="divider"></div>
+            </header>
 
-        <div class="info-tafel">
+            <div class="info-tafel">
 
-            <section>
-                <h2>Ein Mann mit zwei Seiten</h2>
-                <p>Bismarck steht für die deutsche Einheit, aber auch für Kriege und harte Machtpolitik. Beides gehört zu seiner Geschichte. Genau deshalb wird er bis heute so unterschiedlich beurteilt.</p>
-            </section>
+                <section>
+                    <h2>Ein Mann mit zwei Seiten</h2>
+                    <p>Bismarck steht für die deutsche Einheit, aber auch für Kriege und harte Machtpolitik. Beides gehört zu seiner Geschichte. Genau deshalb wird er bis heute so unterschiedlich beurteilt.</p>
+                </section>
 
-            <section>
-                <h2>Das Denkmal in Hamburg</h2>
-                <p>Das Denkmal zeigt ihn als starken Staatsmann. Es erinnert an die Gründung des Deutschen Reiches 1871. Dabei wird oft vergessen, dass diese Einigung nur durch mehrere Kriege möglich war.</p>
-            </section>
+                <section>
+                    <h2>Das Denkmal in Hamburg</h2>
+                    <p>Das Denkmal zeigt ihn als starken Staatsmann. Es erinnert an die Gründung des Deutschen Reiches 1871. Dabei wird oft vergessen, dass diese Einigung nur durch mehrere Kriege möglich war.</p>
+                </section>
 
-            <section>
-                <h2>Umgang mit Gegnern</h2>
-                <p>Politische Gegner versuchte Bismarck auszuschalten. Mit den Sozialistengesetzen verbot er Zeitungen und Vereine der Sozialdemokraten. Nach heutigen Maßstäben ist das ein klarer Angriff auf die Meinungsfreiheit.</p>
-            </section>
+                <section>
+                    <h2>Umgang mit Gegnern</h2>
+                    <p>Politische Gegner versuchte Bismarck auszuschalten. Mit den Sozialistengesetzen verbot er Zeitungen und Vereine der Sozialdemokraten. Nach heutigen Maßstäben ist das ein klarer Angriff auf die Meinungsfreiheit.</p>
+                </section>
 
-            <section>
-                <h2>Militär vor Mitbestimmung</h2>
-                <p>Das Militär hatte im Kaiserreich viel Einfluss. Das Parlament konnte viele Entscheidungen nicht wirklich kontrollieren. Demokratie spielte für Bismarck nur eine Nebenrolle.</p>
-            </section>
+                <section>
+                    <h2>Militär vor Mitbestimmung</h2>
+                    <p>Das Militär hatte im Kaiserreich viel Einfluss. Das Parlament konnte viele Entscheidungen nicht wirklich kontrollieren. Demokratie spielte für Bismarck nur eine Nebenrolle.</p>
+                </section>
 
-            <section>
-                <h2>Sozialpolitik mit Plan</h2>
-                <p>Kranken- und Rentenversicherung sollten die Arbeiter an den Staat binden. Bismarck wollte verhindern, dass sie sich politisch radikalisieren. Hilfe und Kontrolle gingen dabei Hand in Hand.</p>
-            </section>
+                <section>
+                    <h2>Sozialpolitik mit Plan</h2>
+                    <p>Kranken- und Rentenversicherung sollten die Arbeiter an den Staat binden. Bismarck wollte verhindern, dass sie sich politisch radikalisieren. Hilfe und Kontrolle gingen dabei Hand in Hand.</p>
+                </section>
 
-            <section>
-                <h2>Beginn der Kolonialpolitik</h2>
-                <p>1884 teilten europäische Staaten in Berlin große Teile Afrikas unter sich auf. Die Menschen dort hatten kein Mitspracherecht. Die Folgen waren Gewalt, Ausbeutung und der Verlust von Heimat.</p>
-            </section>
+                <section>
+                    <h2>Beginn der Kolonialpolitik</h2>
+                    <p>1884 teilten europäische Staaten in Berlin große Teile Afrikas unter sich auf. Die Menschen dort hatten kein Mitspracherecht. Die Folgen waren Gewalt, Ausbeutung und der Verlust von Heimat.</p>
+                </section>
 
-            <div class="quiz-container">
-                <h2 style="font-family: 'Playfair Display', serif; color: var(--primary-color);">Quiz</h2>
+                <div class="quiz-container">
+                    <h2 style="font-family: 'Playfair Display', serif; color: var(--primary-color);">Quiz</h2>
 
-                <div class="progress-bar">
-                    <div class="progress" id="progress"></div>
+                    <div class="progress-bar">
+                        <div class="progress" id="progress"></div>
+                    </div>
+
+                    <div id="quiz"></div>
                 </div>
 
-                <div id="quiz"></div>
             </div>
 
+            <footer>
+                Ein Projekt von <strong>Vincent, Clara, Matilda und Ilias</strong><br>
+                Lernwebseite zu Otto von Bismarck – erstellt für GitHub Pages
+            </footer>
+
         </div>
-
-        <footer>
-            Ein Projekt von <strong>Vincent, Clara, Matilda und Ilias</strong><br>
-            Lernwebseite zu Otto von Bismarck – erstellt für GitHub Pages
-        </footer>
-
     </div>
 </div>
 
 <script>
-    const allQuestions = [
-        { q: "Warum führte Bismarck Sozialversicherungen ein?", options: ["Um Arbeiter ruhig zu halten", "Aus reiner Menschenliebe"], correct: 0 },
-        { q: "Was geschah 1884 in Berlin?", options: ["Afrika wurde aufgeteilt", "Frieden wurde geschlossen"], correct: 0 },
-        { q: "Gegen wen richteten sich die Sozialistengesetze?", options: ["Sozialdemokraten", "Adel"], correct: 0 },
-        { q: "Wie wurde Deutschland geeint?", options: ["Durch Kriege", "Durch Wahlen"], correct: 0 },
-        { q: "Welche Rolle hatte das Militär?", options: ["Großen Einfluss", "Kaum Bedeutung"], correct: 0 },
-        { q: "Warum ist Bismarck umstritten?", options: ["Wegen Gewaltpolitik", "Weil er erfolglos war"], correct: 0 },
-        { q: "Was war Bismarcks Ziel?", options: ["Stabilität und Kontrolle", "Mehr Demokratie"], correct: 0 },
-        { q: "Wurden Afrikaner gefragt?", options: ["Nein", "Ja"], correct: 0 },
-        { q: "Wie sah Bismarck das Parlament?", options: ["Als weniger wichtig", "Als oberste Macht"], correct: 0 },
-        { q: "Was zeigt das Denkmal?", options: ["Macht und Stärke", "Bescheidenheit"], correct: 0 }
-    ];
+const allQuestions = [
+    { q: "Warum führte Bismarck Sozialversicherungen ein?", options: ["Um Arbeiter ruhig zu halten", "Aus reiner Menschenliebe"], correct: 0 },
+    { q: "Was geschah 1884 in Berlin?", options: ["Afrika wurde aufgeteilt", "Frieden wurde geschlossen"], correct: 0 },
+    { q: "Gegen wen richteten sich die Sozialistengesetze?", options: ["Sozialdemokraten", "Adel"], correct: 0 },
+    { q: "Wie wurde Deutschland geeint?", options: ["Durch Kriege", "Durch Wahlen"], correct: 0 },
+    { q: "Welche Rolle hatte das Militär?", options: ["Großen Einfluss", "Kaum Bedeutung"], correct: 0 },
+    { q: "Warum ist Bismarck umstritten?", options: ["Wegen Gewaltpolitik", "Weil er erfolglos war"], correct: 0 },
+    { q: "Was war Bismarcks Ziel?", options: ["Stabilität und Kontrolle", "Mehr Demokratie"], correct: 0 },
+    { q: "Wurden Afrikaner gefragt?", options: ["Nein", "Ja"], correct: 0 },
+    { q: "Wie sah Bismarck das Parlament?", options: ["Als weniger wichtig", "Als oberste Macht"], correct: 0 },
+    { q: "Was zeigt das Denkmal?", options: ["Macht und Stärke", "Bescheidenheit"], correct: 0 }
+];
 
-    let selected = [];
-    let current = 0;
-    let score = 0;
+let selected = [];
+let current = 0;
+let score = 0;
 
-    function startQuiz() {
-        selected = [...allQuestions].sort(() => 0.5 - Math.random()).slice(0, 3);
-        current = 0;
-        score = 0;
+function startQuiz() {
+    selected = [...allQuestions].sort(() => 0.5 - Math.random()).slice(0, 3);
+    current = 0;
+    score = 0;
+    updateProgress();
+    showQuestion();
+}
+
+function updateProgress() {
+    document.getElementById("progress").style.width = ((current) / 3) * 100 + "%";
+}
+
+function showQuestion() {
+    const q = selected[current];
+    const quiz = document.getElementById("quiz");
+
+    quiz.innerHTML = `
+        <div class="quiz-question">${current + 1} von 3: ${q.q}</div>
+        ${q.options.map((o, i) => `<div class="quiz-option" onclick="checkAnswer(${i})">${o}</div>`).join("")}
+        <div class="feedback" id="feedback"></div>
+    `;
+}
+
+function checkAnswer(i) {
+    const q = selected[current];
+    const feedback = document.getElementById("feedback");
+
+    if (i === q.correct) {
+        score++;
+        feedback.style.color = "#27ae60";
+        feedback.innerText = "Richtig 👍";
+    } else {
+        feedback.style.color = "#c0392b";
+        feedback.innerText = "Leider falsch.";
+    }
+
+    setTimeout(() => {
+        current++;
         updateProgress();
-        showQuestion();
-    }
 
-    function updateProgress() {
-        document.getElementById("progress").style.width = ((current) / 3) * 100 + "%";
-    }
-
-    function showQuestion() {
-        const q = selected[current];
-        const quiz = document.getElementById("quiz");
-
-        quiz.innerHTML = `
-            <div class="quiz-question">${current + 1} von 3: ${q.q}</div>
-            ${q.options.map((o, i) => `<div class="quiz-option" onclick="checkAnswer(${i})">${o}</div>`).join("")}
-            <div class="feedback" id="feedback"></div>
-        `;
-    }
-
-    function checkAnswer(i) {
-        const q = selected[current];
-        const feedback = document.getElementById("feedback");
-
-        if (i === q.correct) {
-            score++;
-            feedback.style.color = "#27ae60";
-            feedback.innerText = "Richtig 👍";
+        if (current < selected.length) {
+            showQuestion();
         } else {
-            feedback.style.color = "#c0392b";
-            feedback.innerText = "Leider falsch.";
+            document.getElementById("progress").style.width = "100%";
+            document.getElementById("quiz").innerHTML = `
+                <div class="score">Du hast ${score} von 3 richtig.</div>
+                <button class="restart-btn" onclick="startQuiz()">Nochmal spielen</button>
+            `;
         }
+    }, 900);
+}
 
-        setTimeout(() => {
-            current++;
-            updateProgress();
-
-            if (current < selected.length) {
-                showQuestion();
-            } else {
-                document.getElementById("progress").style.width = "100%";
-                document.getElementById("quiz").innerHTML = `
-                    <div class="score">Du hast ${score} von 3 richtig.</div>
-                    <button class="restart-btn" onclick="startQuiz()">Nochmal spielen</button>
-                `;
-            }
-        }, 900);
-    }
-
-    startQuiz();
+startQuiz();
 </script>
-
 </body>
 </html>
